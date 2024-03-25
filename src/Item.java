@@ -132,7 +132,7 @@ public class Item {
                 "Quantità nel magazzino: " + quantityInWarehouse + "\n");
     }
 
-    public void shortPrint(ArrayList<Item> items) {
+    public static void shortPrint(ArrayList<Item> items) {
         for (Item item : items) {
             System.out.println(item.itemId + " " + item.deviceType + " " + item.deviceModel + " " + item.manufacturer + " " + item.sellingPrice + " € " + this.quantityInWarehouse );
         }
