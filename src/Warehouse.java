@@ -26,83 +26,156 @@ public class Warehouse {
         }
     }
 
-    public ArrayList<Item> searchById(ArrayList<Item> list, int itemId) {
-        ArrayList<Item> filteredList = new ArrayList<>();
+    public static Item searchById(ArrayList<Item> list, int itemId) {
+        Item selectedItem = null;
+        boolean isArticleAvailable = false;
         for (Item item : list) {
             if (item.getItemId() == itemId) {
-                filteredList.add(item);
+                isArticleAvailable = true;
+                selectedItem = item;
+
             }
         }
-        return filteredList;
+        if (!isArticleAvailable) {
+            System.out.println("Nessun articolo trovato con questo parametro di ricerca");
+            Main.filter(list);
+        }
+
+        System.out.println("Articoli trovati col parametro di ricerca selezionato");
+        Item.printCharacteristicsForCustomer(selectedItem);
+        return selectedItem;
     }
 
-    public ArrayList<Item> searchByPrice(ArrayList<Item> list, float sellingPrice) {
+    public static ArrayList<Item> searchByPrice(ArrayList<Item> list, float sellingPrice) {
         ArrayList<Item> filteredList = new ArrayList<>();
+        boolean isArticleAvailable = false;
         for (Item item : list) {
             if (item.getSellingPrice() == sellingPrice) {
+                isArticleAvailable = true;
                 filteredList.add(item);
             }
         }
+        if (!isArticleAvailable) {
+            System.out.println("Nessun articolo trovato con questo parametro di ricerca.");
+            Main.filter(list);
+        }
+
+        System.out.println("Articoli trovati col parametro di ricerca selezionato");
+        Item.shortPrint(filteredList);
         return filteredList;
     }
 
-    public ArrayList<Item> searchByPriceRange(ArrayList<Item> list, float minBound, float maxBound) {
+    public static ArrayList<Item> searchByPriceRange(ArrayList<Item> list, float minBound, float maxBound) {
         ArrayList<Item> filteredList = new ArrayList<>();
+        boolean isArticleAvailable = false;
         for (Item item : list) {
             if (item.getSellingPrice() >= minBound && item.getSellingPrice() <= maxBound) {
+                isArticleAvailable = true;
                 filteredList.add(item);
             }
         }
+        if (!isArticleAvailable) {
+            System.out.println("Nessun articolo trovato con questo parametro di ricerca.");
+            Main.filter(list);
+        }
+
+        System.out.println("Articoli trovati col parametro di ricerca selezionato");
+        Item.shortPrint(filteredList);
         return filteredList;
     }
 
-    public ArrayList<Item> searchByCost(ArrayList<Item> list, float buyingCost) {
+    public static ArrayList<Item> searchByCost(ArrayList<Item> list, float buyingCost) {
         ArrayList<Item> filteredList = new ArrayList<>();
+        boolean isArticleAvailable = false;
         for (Item item : list) {
             if (item.getBuyingCost() == buyingCost) {
+                isArticleAvailable = true;
                 filteredList.add(item);
             }
         }
+        if (!isArticleAvailable) {
+            System.out.println("Nessun articolo trovato con questo parametro di ricerca.");
+            Main.filter(list);
+        }
+
+        System.out.println("Articoli trovati col parametro di ricerca selezionato");
+        Item.shortPrint(filteredList);
         return filteredList;
     }
 
-    public ArrayList<Item> searchByCostRange(ArrayList<Item> list, float minBound, float maxBound) {
+    public static ArrayList<Item> searchByCostRange(ArrayList<Item> list, float minBound, float maxBound) {
         ArrayList<Item> filteredList = new ArrayList<>();
+        boolean isArticleAvailable = false;
         for (Item item : list) {
             if (item.getBuyingCost() >= minBound && item.getBuyingCost() <= maxBound) {
+                isArticleAvailable = true;
                 filteredList.add(item);
             }
         }
+        if (!isArticleAvailable) {
+            System.out.println("Nessun articolo trovato con questo parametro di ricerca.");
+            Main.filter(list);
+        }
+
+        System.out.println("Articoli trovati col parametro di ricerca selezionato");
+        Item.shortPrint(filteredList);
         return filteredList;
     }
 
-    public ArrayList<Item> searchByDeviceType(ArrayList<Item> list, String deviceType) {
+    public static ArrayList<Item> searchByDeviceType(ArrayList<Item> list, String deviceType) {
         ArrayList<Item> filteredList = new ArrayList<>();
+        boolean isArticleAvailable = false;
         for (Item item : list) {
             if (item.getDeviceType().toString().equalsIgnoreCase(deviceType)) {
+                isArticleAvailable = true;
                 filteredList.add(item);
             }
         }
+        if (!isArticleAvailable) {
+            System.out.println("Nessun articolo trovato con questo parametro di ricerca.");
+            Main.filter(list);
+        }
+
+        System.out.println("Articoli trovati col parametro di ricerca selezionato");
+        Item.shortPrint(filteredList);
         return filteredList;
     }
 
-    public ArrayList<Item> searchByManifacturer(ArrayList<Item> list, String manifacturer) {
+    public static ArrayList<Item> searchByManufacturer(ArrayList<Item> list, String manufacturer) {
         ArrayList<Item> filteredList = new ArrayList<>();
+        boolean isArticleAvailable = false;
         for (Item item : list) {
-            if (item.getManifacturer().equalsIgnoreCase(manifacturer)) {
+            if (item.getManufacturer().equalsIgnoreCase(manufacturer)) {
+                isArticleAvailable = true;
                 filteredList.add(item);
             }
         }
+        if (!isArticleAvailable) {
+            System.out.println("Nessun articolo trovato con questo parametro di ricerca.");
+            Main.filter(list);
+        }
+
+        System.out.println("Articoli trovati col parametro di ricerca selezionato");
+        Item.shortPrint(filteredList);
         return filteredList;
     }
 
-    public ArrayList<Item> searchByModel(ArrayList<Item> list, String deviceModel) {
+    public static ArrayList<Item> searchByModel(ArrayList<Item> list, String deviceModel) {
         ArrayList<Item> filteredList = new ArrayList<>();
+        boolean isArticleAvailable = false;
         for (Item item : list) {
             if (item.getDeviceModel().equalsIgnoreCase(deviceModel)) {
+                isArticleAvailable = true;
                 filteredList.add(item);
             }
         }
+        if (!isArticleAvailable) {
+            System.out.println("Nessun articolo trovato con questo parametro di ricerca.");
+            Main.filter(list);
+        }
+
+        System.out.println("Articoli trovati col parametro di ricerca selezionato");
+        Item.shortPrint(filteredList);
         return filteredList;
     }
 
