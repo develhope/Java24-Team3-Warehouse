@@ -110,7 +110,7 @@ public class Main {
                     if (itemsFiltered.size() == 1) {
 
                         for (Item item : itemsFiltered) {
-                            Item.printCharacteristicsForCustomer(item);
+                            item.printCharacteristicsForCustomer();
                         }
                         System.out.println("""
                                 Vuoi aggiungere al carrello?
@@ -159,7 +159,7 @@ public class Main {
         for (Item item : itemsWarehouse) {
             if (item.getItemId() == id) {
                 selectedItem = item;
-                Item.printCharacteristicsForCustomer(selectedItem);
+                selectedItem.printCharacteristicsForCustomer();
                 break;
             }
         }
