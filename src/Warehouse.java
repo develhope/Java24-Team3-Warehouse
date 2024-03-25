@@ -42,7 +42,7 @@ public class Warehouse {
         }
 
         System.out.println("Articoli trovati col parametro di ricerca selezionato");
-        Item.printCharacteristicsForCustomer(selectedItem);
+        selectedItem.printCharacteristicsForCustomer();
         return selectedItem;
     }
 
